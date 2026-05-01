@@ -1,0 +1,3 @@
+_target_: platito.models.fm.r3n_fm.R3NFlowMatcher
+sigma: 0.01
+scale_ref: 1.0

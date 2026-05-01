@@ -1,0 +1,16 @@
+defaults:
+  - mdcath_names@protein_names: under_200res_no_similarity
+
+_target_: platito.data.mdcath_datamodule.MDCATHDataModule
+dataset_path: ${paths.project_data_dir}/mdCATH
+seq_emb_name: esmc_6b
+max_lag: 200 # in ns
+samples_per_epoch: 2000000
+temperatures: ["320", "348", "379", "413", "450"]
+batch_size: 82
+num_workers: 8
+pin_memory: True
+drop_last: True # useful when compiling models
+collate_fn:
+  _target_: platito.data.framedata.FrameDataCollator
+  pad_to: null

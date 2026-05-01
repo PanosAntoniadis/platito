@@ -1,0 +1,22 @@
+defaults:
+  - _self_
+  - proteina_base
+
+feat_extractor: False
+
+token_dim: 256
+dim_cond: 196
+pair_repr_dim: 196
+nlayers: 6
+nheads: 6
+
+# Parameters for the features we extract
+feats_init_seq: ["res_seq_pdb_idx"]
+feats_cond_seq: ["time_emb", "cond_seq_feat"]
+
+feats_pair_repr: ["rel_seq_sep", "xt_pair_dists"]  # Features to include in the pair representation
+feats_pair_cond: ["time_emb"]   # Features to include in the pair representation conditioning
+
+t_emb_dim: 196
+idx_emb_dim: 196
+cond_emb_dim: 256

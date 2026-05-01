@@ -1,0 +1,10 @@
+dir: ${paths.output_dir}
+mode: 'online'
+project: platito
+name: null
+entity: null
+id: null # pass correct id to resume experiment!
+anonymous: null # enable anonymous logging
+group: ""
+tags: []
+job_type: ""

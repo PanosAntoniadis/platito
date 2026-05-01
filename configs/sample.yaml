@@ -1,0 +1,38 @@
+defaults:
+  - _self_
+  - paths: default
+  - logger: null  # set to "wandb" to enable W&B logging
+  - hydra: default
+
+task_name: "sample_platito"
+
+# Checkpoint loading: provide one of the following options.
+#
+# Option 1 - local checkpoint:
+#   checkpoint_path: /path/to/platito_19M.ckpt
+#
+# Option 2 - HuggingFace Hub (recommended):
+#   hf_repo_id: pantoniadis/platito
+#   hf_filename: platito_19M.ckpt
+
+checkpoint_path: null
+hf_repo_id: null
+hf_filename: null
+
+# Starting PDB structure and ESMC pLM embeddings
+pdb_path: null                # path to starting structure PDB
+seq_emb_path: null            # path to sequence embedding .pt file, shape [L, D]
+
+number_of_trajectories: 1000  # parallel trajectories to generate
+step: 1                       # lag time (\Delta t) in ns
+number_of_steps: 1000         # rollout steps per trajectory (total time = step * number_of_steps ns)
+temperature: 300              # simulation temperature in K
+method: "euler"               # ODE method
+integrator_steps: 50          # ODE steps
+save_intermediate_steps: True # If True, save all intermediate structures along the trajectory
+
+# GPU selection: null for CPU or a single GPU integer (e.g., 0)
+gpu_device: 0
+
+# Compile the model with torch.compile for faster inference (requires PyTorch >= 2.0)
+compile: false

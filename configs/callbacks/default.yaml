@@ -1,0 +1,24 @@
+defaults:
+  - model_summary
+  - model_checkpoint
+  - model_checkpoint_steps
+  - lr_monitor
+  - _self_
+
+model_checkpoint: # saves best and last checkpoint
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "step_{step:03d}"
+  monitor: "train/loss"
+  mode: "min"
+  save_last: True
+  auto_insert_metric_name: False
+  save_on_train_epoch_end: True
+  every_n_epochs: 1
+
+
+model_checkpoint_steps: # saves all checkpoints every X steps
+  dirpath: ${paths.output_dir}/checkpoints/every_n_steps
+  filename: "step_{step:03d}"
+  every_n_train_steps: 50000   
+  save_top_k: -1
+  auto_insert_metric_name: false

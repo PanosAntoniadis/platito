@@ -1,0 +1,31 @@
+defaults:
+  - _self_
+  - proteina_base
+
+feat_extractor: True
+
+token_dim: 256
+dim_cond: 196
+pair_repr_dim: 196
+nlayers: 6
+nheads: 6
+
+# Parameters for the features we extract
+feats_init_seq: ["res_seq_pdb_idx", "seq_emb_esm3"]
+feats_cond_seq: ["lag_emb", "temp_emb"]
+
+feats_pair_repr: ["rel_seq_sep", "xt_pair_dists"]  
+feats_pair_cond: []
+
+
+idx_emb_dim: 196
+lag_emb_dim: 64
+max_lag: 200
+lag_emb_max_positions: 1000
+# ESM embedding dim: 2560 for esmc-6b-2024-12 (PLaTITO-19M / PLaTITO-36M),
+#                     960 for esmc-300m-2024-12 (PLaTITO-3M)
+sequence_emb_dim: 2560
+temp_emb_dim: 64
+temp_max: 500
+temp_min: 250
+temp_emb_max_positions: 100

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="PLaTITO - Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators">
+  <meta name="description" content="PLaTITO incorporates protein language model embeddings into generative molecular dynamics, achieving state-of-the-art equilibrium sampling on out-of-distribution proteins including fast-folding proteins.">
+  <meta name="keywords" content="molecular dynamics, protein language model, generative models, flow matching, transfer operator, ESM, coarse-grained simulation">
+  <meta name="author" content="Panagiotis Antoniadis, Beatrice Pavesi, Simon Olsson, Ole Winther">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PLaTITO">
+  <meta property="og:title" content="PLaTITO: Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators">
+  <meta property="og:description" content="PLaTITO incorporates protein language model embeddings into generative molecular dynamics, achieving state-of-the-art equilibrium sampling on out-of-distribution proteins including fast-folding proteins.">
+  <meta property="og:url" content="https://panosantoniadis.github.io/platito/">
+  <meta property="og:image" content="https://panosantoniadis.github.io/platito/static/images/overview.png">
+
+  <meta name="citation_title" content="Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators">
+  <meta name="citation_author" content="Antoniadis, Panagiotis">
+  <meta name="citation_author" content="Pavesi, Beatrice">
+  <meta name="citation_author" content="Olsson, Simon">
+  <meta name="citation_author" content="Winther, Ole">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_arxiv_id" content="2602.11216">
+
+  <title>PLaTITO: Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators</title>
+  <link rel="icon" type="image/png" href="static/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+
+  <main id="main-content">
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://panosantoniadis.github.io/" target="_blank">Panagiotis Antoniadis</a><sup style="font-size:0.6em;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.chalmers.se/en/persons/pavesi/" target="_blank">Beatrice Pavesi</a><sup style="font-size:0.6em;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.chalmers.se/en/persons/simonols/" target="_blank">Simon Olsson</a><sup style="font-size:0.6em;">* 2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://olewinther.github.io/" target="_blank">Ole Winther</a><sup style="font-size:0.6em;">* 1,3</sup>
+              </span>
+            </div>
+            <div class="is-size-6 publication-authors" style="margin-top:0.75rem;">
+              <span class="author-block"><sup>1</sup> University of Copenhagen</span> &nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup> Chalmers University of Technology</span> &nbsp;&nbsp;
+              <span class="author-block"><sup>3</sup> Technical University of Denmark</span>
+            </div>
+            <div class="is-size-6 publication-authors" style="margin-top:0.4rem;">
+              <span class="eql-cntrb"><small><sup>*</sup>Equal contribution, ordered alphabetically</small></span>
+            </div>
+            <div class="is-size-4 publication-authors" style="margin-top:0.6rem;">
+              <span class="author-block"><b>International Conference on Machine Learning (ICML) 2026</b></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2602.11216.pdf" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2602.11216" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark"
+                     style="opacity:0.55;cursor:default;pointer-events:none;" title="Code will be released upon publication">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code <small>(coming soon)</small></span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/pantoniadis/platito" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">🤗</span>
+                    <span>Models</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Abstract ──────────────────────────────────────────────────────────── -->
+  <section class="section hero is-light">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Molecular dynamics (MD) is a central computational tool in physics, chemistry, and biology,
+              enabling quantitative prediction of experimental observables as expectations over
+              high-dimensional molecular distributions such as Boltzmann distributions and transition
+              densities. However, conventional MD is fundamentally limited by the high computational cost
+              required to generate independent samples. Generative molecular dynamics (GenMD) has recently
+              emerged as an alternative, learning surrogates of molecular distributions either from data or
+              through interaction with energy models. While these methods enable efficient sampling, their
+              transferability across molecular systems is often limited. In this work, we show that
+              incorporating auxiliary sources of information can improve the data efficiency and
+              generalization of transferable implicit transfer operators (TITO) for molecular dynamics. We
+              find that coarse-grained TITO models are substantially more data-efficient than Boltzmann
+              Emulators, and that incorporating protein language model (pLM) embeddings further improves
+              out-of-distribution generalization. Our approach, PLaTITO, achieves state-of-the-art
+              performance on equilibrium sampling benchmarks for out-of-distribution protein systems,
+              including fast-folding proteins. We further study the impact of additional conditioning
+              signals such as structural embeddings, temperature, and large-language-model-derived
+              embeddings on model performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trajectory gallery ───────────────────────────────────────────────── -->
+  <section class="section trajectory-section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">PLaTITO reproduces folding transition kinetics in unseen settings</h2>
+      <div class="content">
+        <p>
+          Starting from unfolded states, PLaTITO generates long time-scale trajectories for the
+          <a href="https://www.science.org/doi/10.1126/science.1208351" target="_blank">fast-folding proteins</a>,
+          successfully capturing their folding transition kinetics.
+        </p>
+      </div>
+      <div class="trajectory-showcase">
+        <div class="trajectory-frame">
+          <img src="static/images/trajectories.gif" alt="Generated MD trajectories" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Model Overview ───────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="trajectory-header">
+        <h2 class="title is-3 has-text-centered">Model Overview</h2>
+        <div class="content has-text-justified">
+          Building upon the implicit transfer operator (ITO) learning framework, PLaTITO is a flow-based 
+          coarse-grained generative model trained to approximate the long-timescale transition density
+          p(x<sub>t+Δt</sub> | x<sub>t</sub>, S, T, Δt) where ∆t denotes the time step, S the amino-acid 
+          sequence of a protein and T the simulation temperature.
+          During inference, PLaTITO iteratively samples the learned transition model to generate conformational dynamics at increasing
+          timescales, approaching the equilibrium distribution of the MD. To improve data efficiency
+          and out-of-distribution generalization, auxiliary representations are incorporated during
+          training, including pretrained sequence embeddings from ESM Cambrian (ESMC).
+        </p>
+      </div>
+      <div class="figure-frame">
+        <img src="static/images/overview.png" alt="PLaTITO model overview" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Results ──────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Results</h2>
+      <div class="content has-text-justified" style="margin-bottom:2rem;">
+        PLaTITO-19M achieves state-of-the-art performance on equilibrium sampling while requiring substantially
+        less MD training data and computational resources than BioEmu.
+      </div>
+
+      <div class="table-container results-table-wrap">
+        <table class="table is-fullwidth has-text-centered results-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>MAE (↓)</th>
+              <th>RMSE (↓)</th>
+              <th>Coverage (↑)</th>
+              <th>GPU Hours</th>
+              <th>MD Data</th>
+              <th>Parameters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TITO-3M</td>
+              <td>1.068 ± 0.272</td>
+              <td>1.382 ± 0.302</td>
+              <td>0.590 ± 0.111</td>
+              <td>1100</td>
+              <td>56 ms</td>
+              <td>3M</td>
+            </tr>
+            <tr>
+              <td>PLaTITO-3M</td>
+              <td>0.949 ± 0.269</td>
+              <td>1.228 ± 0.328</td>
+              <td>0.651 ± 0.151</td>
+              <td>1100</td>
+              <td>56 ms</td>
+              <td>3M</td>
+            </tr>
+            <tr class="results-highlight">
+              <td><strong>PLaTITO-19M</strong></td>
+              <td><strong>0.824 ± 0.170</strong></td>
+              <td><strong>1.099 ± 0.212</strong></td>
+              <td><strong>0.666 ± 0.136</strong></td>
+              <td>1100</td>
+              <td>56 ms</td>
+              <td>19M</td>
+            </tr>
+            <tr class="baseline-row">
+              <td>BioEmu <sup style="font-size:0.7em;">†</sup></td>
+              <td>1.110 ± 0.292</td>
+              <td>1.389 ± 0.346</td>
+              <td>0.594 ± 0.175</td>
+              <td>9216</td>
+              <td>216 ms</td>
+              <td>31M</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="results-footnote"><sup>†</sup> BioEmu was additionally trained on 131k AFDB structures and 502k experimental ΔG measurements.</p>
+      </div>
+
+      <div class="figure-frame" style="margin-top:2rem;">
+        <img src="static/images/results.png" alt="PLaTITO results" />
+      </div>
+      <div class="results-caption-row">
+        <p class="results-fig-caption"><strong>Left.</strong> Free energy landscapes of three fast-folding proteins (Villin, WW domain, A3D) in TICA space. PLaTITO-19M (middle) accurately reproduces MD reference distributions (left) and outperforms BioEmu (right).</p>
+        <p class="results-fig-caption"><strong>Right.</strong> Scalability with training compute. Performance improves with compute and converges at ~1,100 GPU hours, substantially less than BioEmu's 9,216 GPU hours.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Models ────────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Pre-trained Models</h2>
+      <p class="has-text-centered mb-5">
+        All model checkpoints are available on
+        <a href="https://huggingface.co/pantoniadis/platito" target="_blank">HuggingFace</a>.
+      </p>
+      <div class="table-container">
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Checkpoint</th>
+              <th>ESM backbone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TITO-3M</td>
+              <td><code>tito_3M.ckpt</code></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>PLaTITO-3M</td>
+              <td><code>platito_3M.ckpt</code></td>
+              <td>ESMC 300M</td>
+            </tr>
+            <tr>
+              <td>PLaTITO-19M</td>
+              <td><code>platito_19M.ckpt</code></td>
+              <td>ESMC 6B</td>
+            </tr>
+            <tr>
+              <td>PLaTITO-36M</td>
+              <td><code>platito_36M.ckpt</code></td>
+              <td>ESMC 6B</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ubiquitin folding ────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">PLaTITO folds a millisecond-folding protein</h2>
+      <div class="content">
+        <p>
+          Starting from a completely extended chain, PLaTITO successfully simulates the folding of 
+          <a href="https://www.rcsb.org/structure/1UBQ" target="_blank">ubiquitin</a> into its native topology. 
+          Due to its slow folding rate, this transition could not be observed in the past by 
+          <a href="https://www.pnas.org/doi/10.1073/pnas.1218321110" target="_blank">conventional MD simulations</a>,
+          illustrating the power of PLaTITO.
+        </p>
+      </div>
+      <div class="trajectory-showcase">
+        <div class="trajectory-frame">
+          <img src="static/images/ubiquitin.gif" alt="PLaTITO folding ubiquitin from an extended chain to its native structure" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BibTeX ─────────────────────────────────────────────────────────────── -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{antoniadis2026platito,
+  title   = {Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators},
+  author  = {Antoniadis, Panagiotis and Pavesi, Beatrice and Olsson, Simon and Winther, Ole},
+  journal = {arXiv e-prints},
+  year    = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              Licensed under
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

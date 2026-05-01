@@ -1,0 +1,11 @@
+_target_: platito.models.lightning_module.PLaTITO
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.0001
+  weight_decay: 0
+
+ode_solver:
+  _target_: platito.models.solvers.ode_solver.ODESolver
+  _partial_: true

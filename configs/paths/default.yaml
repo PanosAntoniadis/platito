@@ -1,0 +1,6 @@
+log_dir: ./logs/
+output_dir: ${hydra:runtime.output_dir}
+work_dir: ${hydra:runtime.cwd}
+# Override this on the command line or in a local config:
+#   python scripts/train.py paths.project_data_dir=/path/to/data
+project_data_dir: ???

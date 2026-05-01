@@ -1,0 +1,13 @@
+_target_: lightning.pytorch.trainer.Trainer
+
+default_root_dir: ${paths.output_dir}
+
+accelerator: cpu
+devices: 1
+
+# mixed precision for extra speed-up
+precision: "bf16-mixed"
+
+# set True to to ensure deterministic results
+# makes training slower but gives more reproducibility than just setting seeds
+deterministic: False

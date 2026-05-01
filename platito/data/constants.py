@@ -1,0 +1,3 @@
+MDCATH_ALL_REPLICAS = ["0", "1", "2", "3", "4"]
+MDCATH_ALL_TEMPS = ["320", "348", "379", "413", "450"]
+MDCATH_FRAME_SPACING = 1  # in ns
