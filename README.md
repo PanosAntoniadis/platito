@@ -1,4 +1,5 @@
 <div align="center">
+<img src="assets/logo.png" alt="PLaTITO logo" width="200">
 <h1>PLaTITO: Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators</h1>
 <br>
 <a href="https://arxiv.org/abs/2602.11216">Paper (arXiv)</a> &nbsp;|&nbsp; <a href="https://panosantoniadis.github.io/platito/">Project Page</a>
