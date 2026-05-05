@@ -1,4 +1,4 @@
-"""This script replaces all-atom coordinates with C_{\alpha}-only in each mdCATH domain.
+"""This script replaces all-atom coordinates with C_a-only in each mdCATH domain.
 
 Usage:
     python scripts/prepare_mdcath.py /path/to/mdCATH/data
