@@ -42,7 +42,6 @@ def main():
                             compression="gzip",
                             compression_opts=4,
                         )
-                        del grp["coords"]
         except Exception as e:
             errors.append(f"{domain}: {e}")
 
